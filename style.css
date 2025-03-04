@@ -37,10 +37,30 @@ body.dark-mode {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: background 0.3s, transform 0.3s ease;
+    max-width: 600px;
+    width: 100%;
 }
 
 .container:hover {
     transform: translateY(-10px);
+}
+
+/* Chat Window Styles */
+.chat-window {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Input Group Styles */
@@ -48,12 +68,13 @@ body.dark-mode {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 input[type="text"] {
     width: 70%;
     padding: 12px;
-    margin: 10px 0;
+    margin-right: 10px;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -67,7 +88,6 @@ input[type="text"] {
 /* Button Styles */
 button {
     padding: 12px 20px;
-    margin: 10px 5px;
     border: none;
     border-radius: 5px;
     background-color: var(--button-bg);
@@ -89,13 +109,6 @@ button:hover {
     transform: translateY(-5px);
 }
 
-/* Response Styles */
-#gptResponse {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
 /* Dark Mode Toggle Button */
 .toggle-btn {
     background-color: transparent;
@@ -112,4 +125,26 @@ button:hover {
     background-color: var(--button-bg);
     color: white;
     border-color: var(--button-bg);
+}
+
+/* Chat Bubble Styles */
+.chat-bubble {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #000;
+    max-width: 80%;
+}
+
+.chat-bubble.user {
+    background-color: #28a745;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-bubble.ai {
+    background-color: #ccc;
+    color: black;
+    align-self: flex-start;
 }
